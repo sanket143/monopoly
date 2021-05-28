@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scripts/Card.gd" type="Script" id=2]
+
+[node name="Card" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -924.0
+margin_bottom = -440.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fill" type="ColorRect" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 155.0
+color = Color( 1, 0.756863, 0.027451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

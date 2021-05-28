@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 5, 0.5, 8 )
+
+[sub_resource type="ViewportTexture" id=2]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+albedo_texture = SubResource( 2 )
+metallic = 0.5
+
+[sub_resource type="PlaneMesh" id=4]
+material = SubResource( 3 )
+size = Vector2( 10, 16 )
+
+[sub_resource type="SpatialMaterial" id=6]
+resource_local_to_scene = true
+albedo_color = Color( 0.941176, 0.941176, 0.941176, 1 )
+
+[sub_resource type="CubeMesh" id=5]
+material = SubResource( 6 )
+size = Vector3( 10, 0.99, 16 )
+
+[node name="Card" type="StaticBody"]
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Surface" type="MeshInstance" parent="."]
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Body" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+mesh = SubResource( 5 )
+material/0 = null
