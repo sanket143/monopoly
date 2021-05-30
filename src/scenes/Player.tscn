@@ -1,14 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/scripts/Player.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleMesh" id=1]
-mid_height = 3.0
+radius = 3.0
+mid_height = 10.0
 
 [sub_resource type="CapsuleShape" id=2]
-height = 3.0
+radius = 3.0
+height = 10.0
 
 [sub_resource type="CylinderShape" id=3]
+radius = 3.0
+height = 3.0
+
+[sub_resource type="CylinderShape" id=4]
 
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
@@ -25,15 +31,25 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 2 )
 
 [node name="Foot" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, 0 )
 shape = SubResource( 3 )
 
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
+far = 1047.7
 
 [node name="GroundCheck" type="RayCast" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.3, 0 )
 enabled = true
 cast_to = Vector3( 0, -1.5, 0 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.7, 0 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0 )
+shape = SubResource( 4 )
