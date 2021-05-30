@@ -9,6 +9,7 @@ var x
 var z
 var id
 var type
+var cost
 var rotation
 var filepath
 
@@ -19,5 +20,7 @@ func _init(data):
     self.type = data.type
 
     if "filename" in data:
-        print("res://assets/cards/" + data.filename)
         self.filepath = "res://assets/cards/" + data.filename
+
+    if "cost" in data:
+        self.cost = data.cost

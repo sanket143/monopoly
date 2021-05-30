@@ -1,7 +1,6 @@
 extends Spatial
 
 onready var CardBody = preload("res://src/scenes/CardBody.tscn")
-onready var Card = preload("res://src/scenes/Card.tscn")
 onready var View = preload("res://src/objects/View.tscn")
 onready var BoardData = get_node("/root/BoardData")
 onready var cards = BoardData.cards;
@@ -26,14 +25,10 @@ func add_card(card) -> void:
     label.set("custom_colors/font_color", card.text_color)
     label.text = card.title
 
-    var card_cost = ""
-
-    if "cost" in card:
-        card_cost = card.cost
-
-    cost.set("custom_colors/font_color", card.text_color)
-
-    cost.text = card_cost
+    if card.cost:
+        var card_cost = "$" + str(card.cost)
+        cost.set("custom_colors/font_color", card.text_color)
+        cost.text = card_cost
 
     card_body_instance.add_child(viewport)
 
