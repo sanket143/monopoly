@@ -1,6 +1,6 @@
 extends Node
 
-var CardEntity = preload("res://src/scripts/CardEntity.gd")
+var CardEntity = preload("res://src/scripts/models/CardEntity.gd")
 
 var cards = [
     CardEntity.new({

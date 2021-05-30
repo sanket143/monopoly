@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "CardEntity",
 "language": "GDScript",
-"path": "res://src/scripts/CardEntity.gd"
+"path": "res://src/scripts/models/CardEntity.gd"
 } ]
 _global_script_class_icons={
 "CardEntity": ""

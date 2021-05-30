@@ -9,33 +9,44 @@ onready var cards = BoardData.cards;
 signal show_card(card)
 
 export var card_width = 32
-export var card_height = 51.2 # 49.2
+export var card_height = 51.2
 export var min_from_center = 144
 
 func add_card(card) -> void:
-  var viewport = View.instance()
-  var card_instance = viewport.get_node("Card")
-  var card_body_instance = CardBody.instance();
-  var surface_instance = card_body_instance.get_node("Surface")
-  var material = surface_instance.get_active_material(0).duplicate()
-  var rect: ColorRect = card_instance.get_node("Fill")
-  var label: Label = card_instance.get_node("Fill/Label")
+    var viewport = View.instance()
+    var card_instance = viewport.get_node("Card")
+    var card_body_instance = CardBody.instance();
+    var surface_instance = card_body_instance.get_node("Surface")
+    var material = surface_instance.get_active_material(0).duplicate()
+    var rect: ColorRect = card_instance.get_node("Fill")
+    var label: Label = card_instance.get_node("Fill/Label")
+    var cost: Label = card_instance.get_node("Fill/Cost")
 
-  rect.color = Color(card.color)
-  label.set("custom_colors/font_color", card.text_color)
-  label.text = card.title
+    rect.color = Color(card.color)
+    label.set("custom_colors/font_color", card.text_color)
+    label.text = card.title
 
-  card_body_instance.add_child(viewport)
+    var card_cost = ""
 
-  card_body_instance.translation.x = card.x
-  card_body_instance.translation.z = card.z
-  card_body_instance.rotate_y(deg2rad(card.rotation))
+    if "cost" in card:
+        print(card)
+        card_cost = card.cost
 
-  material.albedo_texture = viewport.get_texture()
-  surface_instance.set_surface_material(0, material)
-  card_body_instance.id = card.id
-  card_body_instance.connect("player_on_card", self, "_on_player_steps_on_card")
-  self.add_child(card_body_instance)
+    cost.set("custom_colors/font_color", card.text_color)
+
+    cost.text = card_cost
+
+    card_body_instance.add_child(viewport)
+
+    card_body_instance.translation.x = card.x
+    card_body_instance.translation.z = card.z
+    card_body_instance.rotate_y(deg2rad(card.rotation))
+
+    material.albedo_texture = viewport.get_texture()
+    surface_instance.set_surface_material(0, material)
+    card_body_instance.id = card.id
+    card_body_instance.connect("player_on_card", self, "_on_player_steps_on_card")
+    self.add_child(card_body_instance)
 
 func generate_cards() -> void:
     var angle = 0
@@ -82,7 +93,7 @@ func generate_cards() -> void:
             add_card(card)
 
 func _ready() -> void:
-  generate_cards()
+    generate_cards()
 
 func _on_player_steps_on_card(entered: bool, card_id) -> void:
     emit_signal("show_card", {
