@@ -29,7 +29,6 @@ func add_card(card) -> void:
     var card_cost = ""
 
     if "cost" in card:
-        print(card)
         card_cost = card.cost
 
     cost.set("custom_colors/font_color", card.text_color)
