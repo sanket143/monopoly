@@ -398,6 +398,3 @@ var cards = [
         "type": Global.CardType.PROPERTY
     }),
 ]
-
-func _ready() -> void:
-    print(Global)
