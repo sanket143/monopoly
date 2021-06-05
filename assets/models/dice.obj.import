@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/dice.obj-95cdc61a5b4d7b28b86c354587a811cd.mesh"
+
+[deps]
+
+files=[ "res://.import/dice.obj-95cdc61a5b4d7b28b86c354587a811cd.mesh" ]
+
+source_file="res://assets/models/dice.obj"
+dest_files=[ "res://.import/dice.obj-95cdc61a5b4d7b28b86c354587a811cd.mesh", "res://.import/dice.obj-95cdc61a5b4d7b28b86c354587a811cd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
