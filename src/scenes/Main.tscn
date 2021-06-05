@@ -138,9 +138,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7, -0.1, -46 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
 script = ExtResource( 5 )
 
-[node name="Cookie" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 166, 0, 0 )
-
 [node name="BillBoard" type="Spatial" parent="."]
 
 [node name="Road" type="GridMap" parent="BillBoard"]
@@ -213,4 +210,10 @@ anims/slide_out = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 147.5, 0 )
 script = ExtResource( 6 )
 
+[node name="Cookies" type="Spatial" parent="."]
+
+[node name="Cookie" parent="Cookies" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 166, 0, 0 )
+
 [connection signal="show_card" from="Board" to="CurrentCard" method="_on_Board_show_card"]
+[connection signal="move_player" from="DiceSpawn" to="." method="_on_DiceSpawn_move_player"]

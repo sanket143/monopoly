@@ -2,6 +2,8 @@ extends Spatial
 
 onready var Dice = preload("res://src/objects/Dice.tscn")
 
+signal move_player
+
 var rng = RandomNumberGenerator.new()
 var no_of_dice = 2
 var no_of_committed_dice = 0
@@ -37,4 +39,4 @@ func _on_dice_commit(number: int) -> void:
     dice_total_number += number
 
     if no_of_committed_dice == no_of_dice:
-        print("ME:", dice_total_number)
+        emit_signal("move_player", dice_total_number)
