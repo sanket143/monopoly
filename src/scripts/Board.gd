@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var CardBody = preload("res://src/scenes/CardBody.tscn")
+onready var CardBody = preload("res://src/scenes/Cards/CardBody.tscn")
 onready var View = preload("res://src/objects/View.tscn")
 onready var BoardData = get_node("/root/BoardData")
 onready var cards = BoardData.cards;

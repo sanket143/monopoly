@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://src/scenes/Card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/Cards/Card.tscn" type="PackedScene" id=1]
 
 [node name="Viewport" type="Viewport"]
 size = Vector2( 320, 512 )

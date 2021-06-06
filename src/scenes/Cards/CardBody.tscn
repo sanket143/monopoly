@@ -5,13 +5,13 @@
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=2]
 resource_local_to_scene = true
 albedo_texture = SubResource( 1 )
 metallic = 0.5
 
 [sub_resource type="PlaneMesh" id=3]
-material = SubResource( 5 )
+material = SubResource( 2 )
 size = Vector2( 32, 51.2 )
 
 [sub_resource type="BoxShape" id=4]
