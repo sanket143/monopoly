@@ -111,12 +111,14 @@ tracks/1/keys = {
 }
 
 [sub_resource type="ProceduralSky" id=9]
-sky_top_color = Color( 0.165882, 0.339608, 0.703529, 1 )
-sky_horizon_color = Color( 0.720784, 0.452157, 0.214902, 1 )
+sky_top_color = Color( 0, 0.0784314, 0.152941, 1 )
+sky_horizon_color = Color( 0.00784314, 0.109804, 0.243137, 1 )
 sky_curve = 0.18
-ground_bottom_color = Color( 0.00117647, 0.183529, 0.22549, 1 )
-ground_horizon_color = Color( 0.716471, 0.378039, 0.27451, 1 )
-sun_latitude = 15.0
+ground_bottom_color = Color( 0.0117647, 0.141176, 0.172549, 1 )
+ground_horizon_color = Color( 0, 0.145098, 0.203922, 1 )
+sun_color = Color( 0, 0.0784314, 0.152941, 1 )
+sun_latitude = 0.0
+sun_energy = 0.17
 
 [sub_resource type="Environment" id=7]
 background_mode = 2
@@ -129,7 +131,7 @@ tonemap_mode = 2
 resource_name = "sky_color"
 length = 24.0
 loop = true
-step = 1.0
+step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:environment:background_sky:sun_latitude")
 tracks/0/interp = 1
@@ -137,10 +139,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 12 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 12, 22.5, 23 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 180.0 ]
+"values": [ 0.0, 180.0, 180.0, 0.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:environment:background_sky:sky_top_color")
@@ -189,6 +191,30 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0.796078, 0.403922, 0.282353, 1 ), Color( 0.172549, 0.498039, 0.67451, 1 ), Color( 0.65098, 0.388235, 0.0509804, 1 ), Color( 0, 0.145098, 0.203922, 1 ), Color( 0, 0.145098, 0.203922, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:environment:background_sky:sun_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 12, 14, 23 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.3, 0.17, 0.17 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:environment:background_sky:sun_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 12, 14, 23 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0.0784314, 0.152941, 1 ), Color( 0, 0.0784314, 0.152941, 1 ) ]
 }
 
 [node name="Main" type="Spatial"]
