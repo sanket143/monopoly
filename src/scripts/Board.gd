@@ -52,12 +52,14 @@ func generate_cards() -> void:
         if card == null:
             continue
 
+        card.rotation = 0
+        card.id = index
+        card.x = x
+        card.z = z
+
         if card.type == Global.CardType.PROPERTY || index % 10 != 0:
             var temp_index = index / 10;
             var card_number = index % 10 - 1;
-
-            card.x = x
-            card.z = z
 
             if temp_index == 0:
                 angle = 180
@@ -79,25 +81,24 @@ func generate_cards() -> void:
                 continue
 
             card.rotation = angle
-            card.id = index
 
             add_card(card)
 
         elif card.type == Global.CardType.START:
+            add_card(card)
             x += (card_height + card_width) / 2
-            print()
+
         elif card.type == Global.CardType.JAIL:
             x += (card_height / 2 - card_width / 2)
             z += (card_height + card_width) / 2
-            print()
+
         elif card.type == Global.CardType.PARKING:
             z += (card_height / 2 - card_width / 2)
             x -= (card_height + card_width) / 2
-            print()
+
         elif card.type == Global.CardType.GO_TO_JAIL:
             x -= (card_height / 2 - card_width / 2)
             z -= (card_height + card_width) / 2
-            print()
 
 func _ready() -> void:
     generate_cards()

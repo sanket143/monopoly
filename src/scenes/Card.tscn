@@ -22,9 +22,9 @@ __meta__ = {
 }
 
 [node name="Fill" type="ColorRect" parent="."]
-margin_left = 10.0
+margin_left = 5.0
 margin_top = 10.0
-margin_right = 310.0
+margin_right = 315.0
 margin_bottom = 502.0
 color = Color( 1, 0.756863, 0.027451, 1 )
 __meta__ = {

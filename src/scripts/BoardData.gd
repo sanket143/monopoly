@@ -8,6 +8,8 @@ var cards = [
         "text_color": "color0",
         "color": "color10",
         "type": Global.CardType.START,
+        "filename": "start.png",
+        "card_position": Global.CardPosition.CORNER,
     }),
     CardEntity.new({
         "title": "Old Kent Road",
@@ -20,13 +22,15 @@ var cards = [
         "house_cost": 50,
         "hotel_cost": 100,
         "filename": "old-kent-road.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({ # Community Chest
         "title": "Community Chest",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.COMMUNITY_CHEST
+        "type": Global.CardType.COMMUNITY_CHEST,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({ # Whitechapel Road
         "title": "Whitechapel Road",
@@ -39,19 +43,22 @@ var cards = [
         "house_cost": 50,
         "hotel_cost": 100,
         "filename": "whitechapel-road.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Income Tax",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.INCOME_TAX
+        "type": Global.CardType.INCOME_TAX,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "King's Cross station",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.STATION
+        "type": Global.CardType.STATION,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "The Angel Islington",
@@ -64,13 +71,15 @@ var cards = [
         "house_cost": 50,
         "hotel_cost": 100,
         "filename": "the-angel-islington.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Chance",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.CHANCE
+        "type": Global.CardType.CHANCE,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Euston Road",
@@ -83,7 +92,8 @@ var cards = [
         "house_cost": 50,
         "hotel_cost": 100,
         "filename": "euston-road.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Pentonville Road",
@@ -96,13 +106,15 @@ var cards = [
         "house_cost": 50,
         "hotel_cost": 100,
         "filename": "pentonville-road.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Jail",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.JAIL
+        "type": Global.CardType.JAIL,
+        "card_position": Global.CardPosition.CORNER,
     }),
     CardEntity.new({
         "title": "Pall Mall",
@@ -115,13 +127,15 @@ var cards = [
         "house_cost": 100,
         "hotel_cost": 200,
         "filename": "pall-mall.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Electric Company",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.ELECTRIC_COMPANY
+        "type": Global.CardType.ELECTRIC_COMPANY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Whitehall",
@@ -134,7 +148,8 @@ var cards = [
         "house_cost": 100,
         "hotel_cost": 200,
         "filename": "whitehall.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Northumberland Avenue",
@@ -147,13 +162,15 @@ var cards = [
         "house_cost": 100,
         "hotel_cost": 200,
         "filename": "northumberland-avenue.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Marylebone station",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.STATION
+        "type": Global.CardType.STATION,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Bow Street",
@@ -166,13 +183,15 @@ var cards = [
         "house_cost": 100,
         "hotel_cost": 200,
         "filename": "bow-street.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({ # Community Chest
         "title": "Community Chest",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.COMMUNITY_CHEST
+        "type": Global.CardType.COMMUNITY_CHEST,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Marlborough Street",
@@ -185,7 +204,8 @@ var cards = [
         "house_cost": 100,
         "hotel_cost": 200,
         "filename": "marlborough-street.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Vine Street",
@@ -198,13 +218,15 @@ var cards = [
         "house_cost": 100,
         "hotel_cost": 200,
         "filename": "vine-street.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Free Parking",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.PARKING
+        "type": Global.CardType.PARKING,
+        "card_position": Global.CardPosition.CORNER,
     }),
     CardEntity.new({
         "title": "The Strand",
@@ -217,13 +239,15 @@ var cards = [
         "house_cost": 150,
         "hotel_cost": 300,
         "filename": "the-strand.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Chance",
         "color": "color9",
         "text_color": "color10",
-        "type": Global.CardType.CHANCE
+        "type": Global.CardType.CHANCE,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Fleet Street",
@@ -236,7 +260,8 @@ var cards = [
         "house_cost": 150,
         "hotel_cost": 300,
         "filename": "fleet-street.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Trafalgar Square",
@@ -249,13 +274,15 @@ var cards = [
         "house_cost": 150,
         "hotel_cost": 300,
         "filename": "trafalgar-square.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Fenchurch Street station",
         "color": "color9",
         "text_color": "color10",
-        "type": Global.CardType.STATION
+        "type": Global.CardType.STATION,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Leicester Square",
@@ -268,7 +295,8 @@ var cards = [
         "house_cost": 150,
         "hotel_cost": 300,
         "filename": "leicester-square.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Coventry Street",
@@ -281,13 +309,15 @@ var cards = [
         "house_cost": 150,
         "hotel_cost": 300,
         "filename": "coventry-street.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Water Works",
         "color": "color9",
         "text_color": "color10",
-        "type": Global.CardType.WATER_WORKS
+        "type": Global.CardType.WATER_WORKS,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Piccadilly",
@@ -300,13 +330,15 @@ var cards = [
         "house_cost": 150,
         "hotel_cost": 300,
         "filename": "piccadilly.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Go To Jail",
         "color": "color9",
         "text_color": "color10",
-        "type": Global.CardType.GO_TO_JAIL
+        "type": Global.CardType.GO_TO_JAIL,
+        "card_position": Global.CardPosition.CORNER,
     }),
     CardEntity.new({
         "title": "Regent Street",
@@ -319,7 +351,8 @@ var cards = [
         "house_cost": 200,
         "hotel_cost": 400,
         "filename": "regent-street.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Oxford Street",
@@ -332,13 +365,15 @@ var cards = [
         "house_cost": 200,
         "hotel_cost": 400,
         "filename": "oxford-street.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({ # Community Chest
         "title": "Community Chest",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.COMMUNITY_CHEST
+        "type": Global.CardType.COMMUNITY_CHEST,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Bond Street",
@@ -351,19 +386,22 @@ var cards = [
         "house_cost": 200,
         "hotel_cost": 400,
         "filename": "bond-street.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Liverpool Street station",
         "color": "color9",
         "text_color": "color10",
-        "type": Global.CardType.STATION
+        "type": Global.CardType.STATION,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Chance",
         "color": "color9",
         "text_color": "color10",
-        "type": Global.CardType.CHANCE
+        "type": Global.CardType.CHANCE,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Park Lane",
@@ -376,13 +414,15 @@ var cards = [
         "house_cost": 250,
         "hotel_cost": 500,
         "filename": "park-lane.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Income Tax",
         "text_color": "color10",
         "color": "color9",
-        "type": Global.CardType.INCOME_TAX
+        "type": Global.CardType.INCOME_TAX,
+        "card_position": Global.CardPosition.EDGE,
     }),
     CardEntity.new({
         "title": "Mayfair",
@@ -395,6 +435,7 @@ var cards = [
         "house_cost": 250,
         "hotel_cost": 500,
         "filename": "mayfair.jpg",
-        "type": Global.CardType.PROPERTY
+        "type": Global.CardType.PROPERTY,
+        "card_position": Global.CardPosition.EDGE,
     }),
 ]

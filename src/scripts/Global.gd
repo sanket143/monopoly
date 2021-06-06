@@ -11,7 +11,12 @@ enum CardType {
     WATER_WORKS,
     ELECTRIC_COMPANY,
     STATION,
-    PROPERTY
+    PROPERTY,
+}
+
+enum CardPosition {
+    CORNER,
+    EDGE,
 }
 
 const COLORS = {
