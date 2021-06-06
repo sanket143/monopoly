@@ -12,12 +12,14 @@ var type
 var cost
 var rotation
 var filepath
+var card_position
 
 func _init(data):
     self.title = data.title
     self.text_color = Global.COLORS[data.text_color]
     self.color = Global.COLORS[data.color]
     self.type = data.type
+    self.card_position = data.card_position
 
     if "filename" in data:
         self.filepath = "res://assets/cards/" + data.filename

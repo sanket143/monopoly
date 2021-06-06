@@ -8,7 +8,7 @@ var cards = [
         "text_color": "color0",
         "color": "color10",
         "type": Global.CardType.START,
-        "filename": "start.png",
+        "filename": "start.jpg",
         "card_position": Global.CardPosition.CORNER,
     }),
     CardEntity.new({
@@ -114,6 +114,7 @@ var cards = [
         "text_color": "color10",
         "color": "color9",
         "type": Global.CardType.JAIL,
+        "filename": "jail.jpg",
         "card_position": Global.CardPosition.CORNER,
     }),
     CardEntity.new({
@@ -226,6 +227,7 @@ var cards = [
         "text_color": "color10",
         "color": "color9",
         "type": Global.CardType.PARKING,
+        "filename": "free-parking.jpg",
         "card_position": Global.CardPosition.CORNER,
     }),
     CardEntity.new({
@@ -338,6 +340,7 @@ var cards = [
         "color": "color9",
         "text_color": "color10",
         "type": Global.CardType.GO_TO_JAIL,
+        "filename": "go-to-jail.jpg",
         "card_position": Global.CardPosition.CORNER,
     }),
     CardEntity.new({
