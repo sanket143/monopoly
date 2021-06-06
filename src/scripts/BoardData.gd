@@ -289,7 +289,7 @@ var cards = [
     CardEntity.new({
         "title": "Leicester Square",
         "color": "color6",
-        "text_color": "color0",
+        "text_color": "color10",
         "rents": [110, 330, 800, 975],
         "site": 22,
         "hotel_rent": 1150,
@@ -303,7 +303,7 @@ var cards = [
     CardEntity.new({
         "title": "Coventry Street",
         "color": "color6",
-        "text_color": "color0",
+        "text_color": "color10",
         "rents": [110, 330, 800, 975],
         "site": 22,
         "hotel_rent": 1150,
@@ -324,7 +324,7 @@ var cards = [
     CardEntity.new({
         "title": "Piccadilly",
         "color": "color6",
-        "text_color": "color0",
+        "text_color": "color10",
         "rents": [120, 360, 850, 1025],
         "site": 22,
         "hotel_rent": 1200,
@@ -346,7 +346,7 @@ var cards = [
     CardEntity.new({
         "title": "Regent Street",
         "color": "color7",
-        "text_color": "color0",
+        "text_color": "color10",
         "rents": [130, 390, 900, 1100],
         "site": 26,
         "hotel_rent": 1275,
@@ -360,7 +360,7 @@ var cards = [
     CardEntity.new({
         "title": "Oxford Street",
         "color": "color7",
-        "text_color": "color0",
+        "text_color": "color10",
         "rents": [130, 390, 900, 1100],
         "site": 26,
         "hotel_rent": 1275,
@@ -381,7 +381,7 @@ var cards = [
     CardEntity.new({
         "title": "Bond Street",
         "color": "color7",
-        "text_color": "color0",
+        "text_color": "color10",
         "rents": [150, 450, 1000, 1200],
         "site": 28,
         "hotel_rent": 1400,
