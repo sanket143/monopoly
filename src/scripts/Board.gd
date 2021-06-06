@@ -9,7 +9,7 @@ signal show_card(card)
 
 export var card_width = 32
 export var card_height = 51.2
-export var min_from_center = 144
+var min_from_center = (4.5 * card_width + card_height / 2)
 
 func add_card(card) -> void:
     var viewport = View.instance()
@@ -44,8 +44,8 @@ func add_card(card) -> void:
 
 func generate_cards() -> void:
     var angle = 0
-    var x = 1
-    var z = 1
+    var x = -min_from_center
+    var z = -min_from_center
 
     for index in cards.size():
         var card = cards[index]
@@ -56,35 +56,48 @@ func generate_cards() -> void:
             var temp_index = index / 10;
             var card_number = index % 10 - 1;
 
+            card.x = x
+            card.z = z
+
             if temp_index == 0:
-                angle = 90
-                x = min_from_center + card_height / 2
-                z = -min_from_center + (card_width / 2) + card_number * card_width
+                angle = 180
+                x += card_width
 
             elif temp_index == 1:
-                angle = 0
-                x = min_from_center - card_number * card_width - (card_width / 2)
-                z = min_from_center + card_height / 2
+                angle = 90
+                z += card_width
 
             elif temp_index == 2:
-                angle = -90
-                x = -min_from_center - card_height / 2
-                z = min_from_center - (card_width / 2) - card_number * card_width
+                angle = 0
+                x -= card_width
 
             elif temp_index == 3:
-                angle = -180
-                x = -min_from_center + card_number * card_width + (card_width / 2)
-                z = -min_from_center - card_height / 2
+                angle = -90
+                z -= card_width
 
             else:
                 continue
 
             card.rotation = angle
-            card.x = x
-            card.z = z
             card.id = index
 
             add_card(card)
+
+        elif card.type == Global.CardType.START:
+            x += (card_height + card_width) / 2
+            print()
+        elif card.type == Global.CardType.JAIL:
+            x += (card_height / 2 - card_width / 2)
+            z += (card_height + card_width) / 2
+            print()
+        elif card.type == Global.CardType.PARKING:
+            z += (card_height / 2 - card_width / 2)
+            x -= (card_height + card_width) / 2
+            print()
+        elif card.type == Global.CardType.GO_TO_JAIL:
+            x -= (card_height / 2 - card_width / 2)
+            z -= (card_height + card_width) / 2
+            print()
 
 func _ready() -> void:
     generate_cards()

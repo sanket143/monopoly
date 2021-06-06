@@ -5,7 +5,6 @@ signal commit
 var committed = false
 
 func _process(delta: float) -> void:
-    
     if angular_velocity == Vector3.ZERO and not committed:
         var number_vectors = [
             Vector3(1, 0, 0),

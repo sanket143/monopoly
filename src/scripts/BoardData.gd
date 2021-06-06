@@ -7,7 +7,7 @@ var cards = [
         "title": "START",
         "text_color": "color0",
         "color": "color10",
-        "type": Global.CardType.START
+        "type": Global.CardType.START,
     }),
     CardEntity.new({
         "title": "Old Kent Road",
