@@ -42,7 +42,7 @@ func add_card(card) -> void:
         surface_instance.set_surface_material(0, material)
         card_body_instance.id = card.id
         card_body_instance.connect("player_on_card", self, "_on_player_steps_on_card")
-        self.add_child(card_body_instance)
+        $Cards.add_child(card_body_instance)
     elif card.card_position == Global.CardPosition.CORNER:
         var img = Image.new()
         var img_texture = ImageTexture.new()
@@ -60,7 +60,7 @@ func add_card(card) -> void:
         card_body_instance.id = card.id
         surface_instance.set_surface_material(0, material)
 
-        self.add_child(card_body_instance)
+        $Cards.add_child(card_body_instance)
 
 func generate_cards() -> void:
     var angle = 0

@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "CardEntity",
 "language": "GDScript",
 "path": "res://src/scripts/models/CardEntity.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://src/scripts/states/States.gd"
 } ]
 _global_script_class_icons={
-"CardEntity": ""
+"CardEntity": "",
+"StateMachine": ""
 }
 
 [application]

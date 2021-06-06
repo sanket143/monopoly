@@ -1,7 +1,10 @@
 extends Node
 
+onready var cards = BoardData.cards;
+
 var rng = RandomNumberGenerator.new()
 var player = 0
+var index = 1
 
 func _ready() -> void:
   Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -16,6 +19,11 @@ func _input(event):
 
 func _on_DiceSpawn_move_player(dice_total_number: int) -> void:
     var cookie = $Cookies/Cookie
-    cookie.position.z = cookie.velocity
-    cookie.move_and_slide(cookie.position, Vector3.UP)
-    print(cookie, dice_total_number)
+
+    index += dice_total_number
+    index = index % cards.size()
+
+    var card = cards[index]
+    cookie.translation.z = card.z
+    cookie.translation.x = card.x
+
