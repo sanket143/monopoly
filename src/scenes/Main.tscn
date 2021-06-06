@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/grass.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=2]
@@ -23,6 +23,36 @@ size = Vector3( 1000, 2, 1000 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 500, 1, 500 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "sun_rotate"
+length = 24.0
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 12, 12.001 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 180, 0, 0 ), Vector3( 360, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 12, 23, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0, 0.0, 1.0 ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "slide_in"
@@ -78,6 +108,87 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+
+[sub_resource type="ProceduralSky" id=9]
+sky_top_color = Color( 0.165882, 0.339608, 0.703529, 1 )
+sky_horizon_color = Color( 0.720784, 0.452157, 0.214902, 1 )
+sky_curve = 0.18
+ground_bottom_color = Color( 0.00117647, 0.183529, 0.22549, 1 )
+ground_horizon_color = Color( 0.716471, 0.378039, 0.27451, 1 )
+sun_latitude = 15.0
+
+[sub_resource type="Environment" id=7]
+background_mode = 2
+background_sky = SubResource( 9 )
+background_color = Color( 0.141176, 1, 0.0431373, 1 )
+ambient_light_color = Color( 1, 0.796078, 0, 1 )
+tonemap_mode = 2
+
+[sub_resource type="Animation" id=8]
+resource_name = "sky_color"
+length = 24.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:environment:background_sky:sun_latitude")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:environment:background_sky:sky_top_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 6, 11, 14, 23 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.184314, 0.368627, 0.764706, 1 ), Color( 0.290196, 0.596078, 0.839216, 1 ), Color( 0.45098, 0.619608, 0.972549, 1 ), Color( 0, 0.0784314, 0.152941, 1 ), Color( 0, 0.0784314, 0.152941, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:environment:background_sky:sky_horizon_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6, 11, 14, 23 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.8, 0.490196, 0.211765, 1 ), Color( 0.364706, 0.92549, 0.92549, 1 ), Color( 0.960784, 0.584314, 0.184314, 1 ), Color( 0.00784314, 0.109804, 0.243137, 1 ), Color( 0.00784314, 0.109804, 0.243137, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:environment:background_sky:ground_bottom_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 6, 11, 14, 23 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.188235, 0.231373, 1 ), Color( 0.054902, 0.282353, 0.337255, 1 ), Color( 0.0396514, 0.256209, 0.307843, 1 ), Color( 0.0117647, 0.141176, 0.172549, 1 ), Color( 0.0117647, 0.141176, 0.172549, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:environment:background_sky:ground_horizon_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 6, 11, 14, 23 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.796078, 0.403922, 0.282353, 1 ), Color( 0.172549, 0.498039, 0.67451, 1 ), Color( 0.65098, 0.388235, 0.0509804, 1 ), Color( 0, 0.145098, 0.203922, 1 ), Color( 0, 0.145098, 0.203922, 1 ) ]
 }
 
 [node name="Main" type="Spatial"]
@@ -156,8 +267,13 @@ __meta__ = {
 }
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.558368, 0.829593, 0, -0.829593, -0.558368, 0, 57.8909, -160 )
+transform = Transform( 1, 0, 0, 0, -0.923867, -0.382714, 0, 0.382714, -0.923867, 0, 200, 0 )
+light_energy = 0.0
 shadow_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalLight"]
+autoplay = "sun_rotate"
+anims/sun_rotate = SubResource( 6 )
 
 [node name="StatBoards" type="Spatial" parent="."]
 
@@ -214,6 +330,13 @@ script = ExtResource( 6 )
 
 [node name="Cookie" parent="Cookies" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 166, 0, 0 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WorldEnvironment"]
+autoplay = "sky_color"
+anims/sky_color = SubResource( 8 )
 
 [connection signal="show_card" from="Board" to="CurrentCard" method="_on_Board_show_card"]
 [connection signal="move_player" from="DiceSpawn" to="." method="_on_DiceSpawn_move_player"]
