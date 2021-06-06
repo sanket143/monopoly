@@ -10,7 +10,7 @@ albedo_color = Color( 0.32549, 0.862745, 1, 1 )
 material = SubResource( 2 )
 size = Vector3( 10, 2, 10 )
 
-[node name="Pillar" type="StaticBody"]
+[node name="Box" type="StaticBody"]
 transform = Transform( 2.4584, 0, 0, 0, 6.30406, 0, 0, 0, 2.4584, 0, 0, 0 )
 collision_mask = 2
 
@@ -20,5 +20,6 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = null

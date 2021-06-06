@@ -7,6 +7,11 @@ size = Vector3( 174, 100, 2 )
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.92549, 0.717647, 0.717647, 1 )
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 0.4
+emission_operator = 0
+emission_on_uv2 = false
 
 [sub_resource type="QuadMesh" id=3]
 material = SubResource( 2 )
@@ -28,11 +33,13 @@ collision_mask = 2
 
 [node name="Holder" type="MeshInstance" parent="Board"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81, -2 )
+use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Viewer" type="MeshInstance" parent="Board"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81, 0 )
+use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = null
 
