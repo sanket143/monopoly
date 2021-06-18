@@ -12,28 +12,34 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "CardEntity",
 "language": "GDScript",
-"path": "res://src/scripts/models/CardEntity.gd"
+"path": "res://src/objects/card/CardEntity.gd"
+}, {
+"base": "RigidBody",
+"class": "Dice",
+"language": "GDScript",
+"path": "res://src/objects/dice/Dice.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://src/scripts/states/States.gd"
+"path": "res://src/world/states/States.gd"
 } ]
 _global_script_class_icons={
 "CardEntity": "",
+"Dice": "",
 "StateMachine": ""
 }
 
 [application]
 
 config/name="Monopoly"
-run/main_scene="res://src/scenes/Main.tscn"
+run/main_scene="res://src/world/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://src/scripts/Global.gd"
-BoardData="*res://src/world/BoardData.tscn"
+Global="*res://src/autoload/Global.gd"
+BoardData="*res://src/autoload/board_data/BoardData.tscn"
 
 [display]
 
@@ -96,4 +102,3 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 environment/default_clear_color=Color( 0.301961, 0.301961, 0.301961, 1 )
-environment/default_environment="res://default_env.tres"
